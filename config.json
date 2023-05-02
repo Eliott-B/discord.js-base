@@ -1,0 +1,15 @@
+{
+    "informations": {
+        "clientId": "",
+        "guildId": "",
+        "token": "",
+        "name": "",
+        "logo": "",
+        "version": ""
+    },
+
+    "settings": {
+        "commandsPath": "./commands",
+        "eventsPath": "./events/"
+    }
+}
