@@ -25,6 +25,16 @@ for (const file of commandsFiles) {
     client.commands.set(command.data.name, command);
 }
 
+// Utils commands
+const utilsPath = path.join(__dirname, settings.commandsPath+"/utils");
+const UtilsFiles = fs.readdirSync(utilsPath).filter(file => file.endsWith('.js'));
+for (const file of UtilsFiles) {
+    const filePath = path.join(utilsPath, file);
+    const command = require(filePath);
+    commands.push(command.data.toJSON());
+    client.commands.set(command.data.name, command);
+}
+
 const rest = new REST({ version: '10'}).setToken(informations.token);
 
 rest.put(Routes.applicationGuildCommands(informations.clientId, informations.guildId), { body: commands})
