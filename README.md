@@ -12,7 +12,7 @@ This is a base for discord.js bots.
 
 1. Clone the repository
 ```bash
-git clone https://github.com/Eliott-B/bot-discord.js-base.git
+git clone https://github.com/Eliott-B/discord.js-base.git
 ```
 
 2. Initialize the project
