@@ -10,6 +10,6 @@
 
     "settings": {
         "commandsPath": "./commands",
-        "eventsPath": "./events/"
+        "eventsPath": "./events"
     }
 }
