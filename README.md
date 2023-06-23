@@ -49,7 +49,7 @@ node index.js
 
 ## HELP
 
-If you need help, you can contact me on Discord: Eliott#5072
+If you need help, you can contact me on Discord: `.eliottb`
 
 ## DONATE
 
