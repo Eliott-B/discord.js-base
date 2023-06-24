@@ -17,22 +17,24 @@ client.commands = new Collection();
 
 const commandsPath = path.join(__dirname, settings.commandsPath);
 const commandsFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
-
-for (const file of commandsFiles) {
-    const filePath = path.join(commandsPath, file);
-    const command = require(filePath);
+for (let file of commandsFiles) {
+    var filePath = path.join(commandsPath, file);
+    var command = require(filePath);
     commands.push(command.data.toJSON());
     client.commands.set(command.data.name, command);
 }
 
-// Utils commands
-const utilsPath = path.join(__dirname, settings.commandsPath+"/utils");
-const UtilsFiles = fs.readdirSync(utilsPath).filter(file => file.endsWith('.js'));
-for (const file of UtilsFiles) {
-    const filePath = path.join(utilsPath, file);
-    const command = require(filePath);
-    commands.push(command.data.toJSON());
-    client.commands.set(command.data.name, command);
+// Subfolders
+const folders = fs.readdirSync(commandsPath).filter(file => !file.endsWith('.js'));
+for (let folder of folders) {
+    var folderPath = path.join(commandsPath, folder);
+    var files = fs.readdirSync(folderPath).filter(file => file.endsWith('.js'));
+    for (let file of files) {
+        var filePath = path.join(folderPath, file);
+        var command = require(filePath);
+        commands.push(command.data.toJSON());
+        client.commands.set(command.data.name, command);
+    }
 }
 
 const rest = new REST({ version: '10'}).setToken(informations.token);
