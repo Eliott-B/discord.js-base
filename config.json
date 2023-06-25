@@ -2,10 +2,7 @@
     "informations": {
         "clientId": "",
         "guildId": "",
-        "token": "",
-        "name": "",
-        "logo": "",
-        "version": ""
+        "token": ""
     },
 
     "settings": {
