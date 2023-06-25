@@ -7,6 +7,7 @@ This is a base for discord.js bots.
 ## PREREQUISITES
 
 - [Node.js](https://nodejs.org/en/)
+- [Discord.js](https://discord.js.org/#/)
 
 ## INSTALLATION
 
